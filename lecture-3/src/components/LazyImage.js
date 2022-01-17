@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useRef, useEffect } from "react";
 
 function LazyImage(props) {
@@ -7,10 +8,15 @@ function LazyImage(props) {
     const callback = (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          const target = entry.target;
+          const previousSibling = target.previousSibling;
           console.log("isIntersecting");
           // 이미지 레이지 로딩 처리
-          entry.target.src = entry.target.dataset.src;
-          observer.unobserve(entry.target);
+          target.src = target.dataset.src;
+          if (previousSibling)
+            previousSibling.srcset = previousSibling.dataset.srcset;
+
+          observer.unobserve(target);
         }
       });
     };
@@ -23,7 +29,12 @@ function LazyImage(props) {
       observer.disconnect();
     };
   }, []);
-  return <img {...props} src={undefined} data-src={props.src} ref={imgRef} />;
+  return (
+    <picture>
+      {props.webp && <source data-srcset={props.webp} type="image/webp" />}
+      <img {...props} src={undefined} data-src={props.src} ref={imgRef} />
+    </picture>
+  );
 }
 
 export default LazyImage;

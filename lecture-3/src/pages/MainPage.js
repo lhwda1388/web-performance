@@ -4,12 +4,18 @@ import ThreeColumns from "../components/ThreeColumns";
 import TwoColumns from "../components/TwoColumns";
 import Card from "../components/Card";
 import Meta from "../components/Meta";
-import main1 from "../assets/main1.jpg";
-import main2 from "../assets/main2.jpg";
-import main3 from "../assets/main3.jpg";
-import main_items from "../assets/main-items.jpg";
-import main_parts from "../assets/main-parts.jpg";
-import main_styles from "../assets/main-styles.jpg";
+import main1_webp from "../assets/_main1.webp";
+import main2_webp from "../assets/_main2.webp";
+import main3_webp from "../assets/_main3.webp";
+import main1 from "../assets/_main1.jpg";
+import main2 from "../assets/_main2.jpg";
+import main3 from "../assets/_main3.jpg";
+import main_items_webp from "../assets/_main-items.webp";
+import main_parts_webp from "../assets/_main-parts.webp";
+import main_styles_webp from "../assets/_main-styles.webp";
+import main_items from "../assets/_main-items.jpg";
+import main_parts from "../assets/_main-parts.jpg";
+import main_styles from "../assets/_main-styles.jpg";
 import LazyImage from "../components/LazyImage";
 
 function MainPage(props) {
@@ -19,15 +25,21 @@ function MainPage(props) {
       <div className="mx-auto">
         <ThreeColumns
           columns={[
-            <Card image={main1}>롱보드는 아주 재밌습니다.</Card>,
-            <Card image={main2}>롱보드를 타면 아주 신납니다.</Card>,
-            <Card image={main3}>롱보드는 굉장히 재밌습니다.</Card>,
+            <Card webp={main1_webp} image={main1}>
+              롱보드는 아주 재밌습니다.
+            </Card>,
+            <Card webp={main2_webp} image={main2}>
+              롱보드를 타면 아주 신납니다.
+            </Card>,
+            <Card webp={main3_webp} image={main3}>
+              롱보드는 굉장히 재밌습니다.
+            </Card>,
           ]}
         />
         <TwoColumns
           bgColor={"#f4f4f4"}
           columns={[
-            <LazyImage src={main_items} />,
+            <LazyImage webp={main_items_webp} src={main_items} />,
             <Meta
               title={"Items"}
               content={
@@ -47,14 +59,14 @@ function MainPage(props) {
               }
               btnLink={"/part"}
             />,
-            <LazyImage src={main_parts} />,
+            <LazyImage webp={main_parts_webp} src={main_parts} />,
           ]}
           mobileReverse={true}
         />
         <TwoColumns
           bgColor={"#f4f4f4"}
           columns={[
-            <LazyImage src={main_styles} />,
+            <LazyImage webp={main_styles_webp} src={main_styles} />,
             <Meta
               title={"Riding Styles"}
               content={
