@@ -10,14 +10,15 @@
     "express": "^4.17.1",
     "fontfaceobserver": "^2.1.0",
     "react": "^16.12.0",
+    "react-app-rewired": "^2.1.11",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.0",
+    "react-scripts": "4.0.3",
     "tailwindcss": "^1.1.4"
   },
   "scripts": {
-    "start": "npm run build:style && react-scripts start",
-    "build": "npm run build:style && react-scripts build",
+    "start": "yarn build:style && react-app-rewired start",
+    "build": "yarn build:style && react-app-rewired build",
     "build:style": "postcss src/tailwind.css -o src/styles.css",
     "serve": "node ./server/server.js",
     "server": "node ./node_modules/json-server/lib/cli/bin.js --watch ./server/database.json -c ./server/config.json"
@@ -39,8 +40,10 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.7.3",
+    "browserslist": "^4.19.1",
     "json-server": "^0.15.1",
     "postcss-cli": "^7.1.0",
+    "preload-webpack-plugin": "3.0.0-beta.4",
     "serve": "^11.3.2"
   }
 }

@@ -9,6 +9,8 @@
     url("./assets/fonts/subset-BMYEONSUNG.woff") format("woff"),
     url("./assets/fonts/BMYEONSUNG.ttf") format("truetype");
   font-display: block;
+  /* A 글자만 폰트 적용*/
+  /* unicode-range: u+0041;  */
 }
 
 .BannerVideo {
