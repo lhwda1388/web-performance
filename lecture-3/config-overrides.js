@@ -11,5 +11,6 @@ module.exports = function override(config, env) {
       fileWhitelist: [/(.woff2?)/i],
     })
   );
+
   return config;
 };
