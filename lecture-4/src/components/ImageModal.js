@@ -5,9 +5,12 @@ import { useDispatch } from 'react-redux';
 import { hideModal, setBgColor } from '../redux/imageModal';
 import { getAverageColorOfImage } from '../utils/getAverageColorOfImage';
 
-function ImageModal({ modalVisible, src, alt, bgColor }) {
+function ImageModal({ modalVisible, src, alt, bgColor, id }) {
   const dispatch = useDispatch();
   const onLoadImage = e => {
+    // 썸네일 이미지 사용
+    // const averageColor = getAverageColorOfImage(document.getElementById(id));
+    // 원본이미지 사용
     const averageColor = getAverageColorOfImage(e.target);
     dispatch(setBgColor(averageColor));
   };

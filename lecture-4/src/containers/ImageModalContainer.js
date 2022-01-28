@@ -4,12 +4,13 @@ import { useSelector } from 'react-redux';
 import ImageModal from '../components/ImageModal';
 
 function ImageModalContainer() {
-  const { modalVisible, bgColor, src, alt } = useSelector(
+  const { modalVisible, bgColor, src, alt, id } = useSelector(
     state => ({
       modalVisible: state.imageModal.modalVisible,
       bgColor: state.imageModal.bgColor,
       src: state.imageModal.src,
       alt: state.imageModal.alt,
+      id: state.imageModal.id,
     }),
     shallowEqual
   );
@@ -28,6 +29,7 @@ function ImageModalContainer() {
       bgColor={bgColor}
       src={src}
       alt={alt}
+      id={id}
     />
   );
 }
